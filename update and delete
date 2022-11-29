@@ -1,0 +1,128 @@
+//using System.Data.Client;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace calculator
+{
+    public partial class Form2 : Form
+    {
+        SqlConnection con = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog= bit3rdsem ; user id = sa;password = kist@123 ; ");
+        public Form2()
+        {
+            InitializeComponent();
+        }
+
+        private void fontDialog1_Apply(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 employeeform = new Form1();
+            employeeform.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                string query = "INSERT INTO student  VALUES ('Anil', 'Ghale', 'Rasuwa', '345100' , 'KIST') ";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Inserted Successfully");
+                con.Close();
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error:" + ex.InnerException);
+            }
+           
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                con.Open();
+                string query = " UPDATE student SET fname='Mansan',lname='Silwal', address='China' WHERE id=2 ;";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successfully");
+                con.Close();
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error:" + ex.InnerException);
+            }
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                string query = " DELETE FROM student WHERE id=2;";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Saved Successfully");
+                con.Close();
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error:" + ex.InnerException);
+            }
+
+        }
+    }
+}
