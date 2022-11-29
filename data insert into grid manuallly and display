@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace calculator
+{
+    public partial class Form4 : Form
+    {
+        
+        public Form4()
+        {
+            InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //this.dataGridView1.Rows.Add("1", "Mansan", "Silwal", "Lalitpur", "971313", "KIST");
+            //this.dataGridView1.Rows.Add("2", "BIkash", "Chand", "kavresthali", "981234212", "KIST");
+            int n = dataGridView1.Rows.Add();
+            dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+            dataGridView1.Rows[n].Cells[1].Value = textBox2.Text;
+            dataGridView1.Rows[n].Cells[2].Value = textBox3.Text;
+            dataGridView1.Rows[n].Cells[3].Value = textBox4.Text;
+            dataGridView1.Rows[n].Cells[4].Value = textBox4.Text;
+            dataGridView1.Rows[n].Cells[5].Value = textBox4.Text;
+
+
+
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 employeeform = new Form1();
+            employeeform.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 employeeform = new Form2();
+            employeeform.ShowDialog();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
